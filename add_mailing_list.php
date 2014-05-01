@@ -24,65 +24,65 @@ echo validation_errors();
 <h1>Add to Mailing List</h1>
 <?=form_open('mailing_list/insert');?>
 
+
 <?php
+//firstname
 $firstname = array(
 'name' => 'first_name',
 'id' => 'first_name',
 );
 echo form_label('First Name','first_name') . ': ';
 echo form_input($firstname). '<br />';
-
+//last name
 $lastname = array(
 'name' => 'last_name',
 'id' => 'last_name',
 );
 echo form_label('Last Name','last_name') . ': ';
 echo form_input($lastname). '<br />';
-
+//email
 $email = array(
 'name' => 'email',
 'id' => 'email',
 );
 echo form_label('Email','email') . ': ';
 echo form_input($email). '<br />';
-
+//address
 $address = array(
 'name' => 'address',
 'id' => 'address',
 );
 echo form_label('Address','address') . ': ';
 echo form_input($address). '<br />';
-
+//state code
 $state_code = array(
 'name' => 'state_code',
 'id' => 'state_code',
 );
 echo form_label('State code','state_code') . ': ';
 echo form_input($state_code). '<br />';
-
+//zip
 $zip_postal = array(
 'name' => 'zip_postal',
 'id' => 'zip_postal',
 );
 echo form_label('Zip postal','zip_postal') . ': ';
 echo form_input($zip_postal). '<br />';
-
-
+//user name
 $username = array(
 'name' => 'username',
 'id' => 'username',
 );
 echo form_label('username','username') . ': ';
 echo form_input($username). '<br />';
-
+//password
 $password = array(
 'name' => 'password',
 'id' => 'password',
 );
 echo form_label('password','password') . ': ';
 echo form_input($password). '<br />';
-
-//ad bio 
+//bio 
 $bio = array(
 'name' => 'bio',
 'id' => 'bio',
@@ -127,7 +127,6 @@ $num_tours3 = array(
 'value' => '4-6',
 );
 
-echo '<legend>Number of tours</legend>'
 echo form_label('None','num_tours1') . ': ';
 echo form_radio($num_tours1). '<br />';
 echo form_label('1-3','num_tours2') . ': ';
@@ -138,4 +137,5 @@ echo form_radio($num_tours3). '<br />';
 
 ?>
 
+<?=form_submit('submit', 'Add to mailing List');?>
 <?=form_close('');?>

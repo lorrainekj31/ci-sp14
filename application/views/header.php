@@ -26,14 +26,13 @@
           <ul class="nav navbar-nav">
 			<li class="active"><a href="#" title="">Active Link</a></li>
 			<?php
-			echo anchor('mailing_list', "Mailing List");	
-			
-			
+			echo anchor('mailing_list', "Mailing List");				
+			?>	
+			<li>
+			<?php
+			echo anchor('mailing_list/add', "Add");
 			?>
-			
-			
-			
-			
+			</li>	
 			<li><a href="#" title="">Other Link</a></li>
 			<li><a href="#" title="">Other Link</a></li>
           </ul>

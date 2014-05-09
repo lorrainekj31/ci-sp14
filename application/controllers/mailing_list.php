@@ -65,6 +65,13 @@ class Mailing_list extends CI_Controller
 		$this->load->library('form_validation');
 		//must have at least one validation rule to insert
 		$this->form_validation->set_rules('email','Email','trim|required|valid_email');
+		$this->form_validation->set_rules('first_name','First Name','trim|required');
+		$this->form_validation->set_rules('last_name','Last Name','trim|required');
+		$this->form_validation->set_rules('address','Address','trim|required');
+		$this->form_validation->set_rules('state_code','State code','trim|required');
+		$this->form_validation->set_rules('zip_postal','Zip postal','trim|required');
+		$this->form_validation->set_rules('username','username','trim|required');
+		$this->form_validation->set_rules('password','password','trim|required');
 		
 			
 		if($this->form_validation->run() == FALSE)

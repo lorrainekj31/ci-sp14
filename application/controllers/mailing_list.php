@@ -5,20 +5,17 @@ class Mailing_list extends CI_Controller
 {
 	function __construct(){
 		parent::__construct();
-		$this->load->helper('url');
+		//$this->load->model('Mailing_list_model');
 			
 		}//end constructor()
 
 	public function index()
 	{//here we are making data available to or header and footer
 		$this->load->model('Mailing_list_model');
-		$data['query'] = $this->Mailing_list_model->get_mailing_list();	
-		
+		$data['query'] = $this->Mailing_list_model->get_mailing_list();			
 		$data['title'] = "Here is our title tag!";
-		$data['style'] = "cerulean.css";
 		$data['banner'] = "Here is our Web Site!";
-		$data['copyright'] = "copyright goes here!";
-		$data['base_url'] = base_url();		
+		$data['copyright'] = "copyright goes here!";	
 		$this->load->view('header',$data);
 		$this->load->view('mailing_list/view_mailing_list', $data);
 		
@@ -30,12 +27,10 @@ class Mailing_list extends CI_Controller
 	{//this will show us the data from a single page
 		$this->load->model('Mailing_list_model');
 		$data['query'] = $this->Mailing_list_model->get_id($id);	
-		
+		$this->config->set_item('style','cerulean.css');		
 		$data['title'] = "Here is our title tag!";
-		$data['style'] = "cerulean.css";
 		$data['banner'] = "Here is our web site!";
 		$data['copyright'] = "copyright goes here!";
-		$data['base_url'] = base_url();		
 		$this->load->view('header',$data);
 		$this->load->view('mailing_list/view_mailing_list_detail', $data);
 		
@@ -45,15 +40,12 @@ class Mailing_list extends CI_Controller
 	
 	public function add()
 	{//a form to add a new record	
-	
+		
 		$this->load->helper('form');	
 		$data['title'] = "Adding a record!";
-		$data['style'] = "cerulean.css";
 		$data['banner'] = "Add a record!";
-		$data['copyright'] = "copyright goes here!";
-		$data['base_url'] = base_url();		
+		$data['copyright'] = "copyright goes here!";	
 		$this->load->view('header',$data);		
-		//var_dump($date['query']);
 		$this->load->view('mailing_list/add_mailing_list', $data);
 		
 		$this->load->view('footer', $data);	
@@ -78,13 +70,11 @@ class Mailing_list extends CI_Controller
 		{//failed validation - send back to form				
 			$this->load->helper('form');	
 			$data['title'] = "Adding a record!";
-			$data['style'] = "cerulean.css";
 			$data['banner'] = "Data Entry Error!";
-			$data['copyright'] = "copyright goes here!";
-			$data['base_url'] = base_url();		
+			$data['copyright'] = "copyright goes here!";	
 			$this->load->view('header',$data);		
-		//var_dump($date['query']);
-		$this->load->view('mailing_list/add_mailing_list', $data);
+
+		//$this->load->view('mailing_list/add_mailing_list', $data);
 		
 		$this->load->view('footer', $data);									
 			echo "insert failed!";
